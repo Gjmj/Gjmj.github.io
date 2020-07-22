@@ -1,0 +1,51 @@
+/*
+* @Author: hp
+* @Date:   2020-07-21 17:24:45
+* @Last Modified by:   hp
+* @Last Modified time: 2020-07-21 17:44:43
+*/
+*{
+	padding: 0;
+	margin:0;
+}
+.dongtai_img{
+	width: 100%;
+	height: 111px;
+}
+.dongtai_img img{
+	width:150%;
+	margin-left: -250px;
+}
+.dongtai_nav{
+	width: 810px;
+    margin: 0 auto;
+    padding: 0 0 80px;
+    background: red;
+    height:2000px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

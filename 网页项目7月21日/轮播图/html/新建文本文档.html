@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../css/gao/huawen.css">
+    </head>
+    <body>
+	    <div class="huawen_lunbo_div">
+			<ul class="huawen_lunbo">
+		        <li><img src="../img/gao/banner1.png" alt=""></li>
+		        <li><img src="../img/gao/banner2.png" alt=""></li>
+		        <li><img src="../img/gao/banner3.png" alt=""></li>
+		    </ul>
+		    <ul class="huawen_lunbo2">
+		        <li></li>
+		        <li></li>
+		        <li></li>
+		    </ul>
+		</div>
+
+<script>
+	var huawen_lunbo = document.getElementsByClassName("huawen_lunbo")[0];
+            var huawen_lunbo_div = document.getElementsByClassName("huawen_lunbo_div");
+            var huawen_lunbos = document.getElementsByClassName("huawen_lunbo2")[0].children;
+//          .children   由子级元素组成数组
+            var i=0;
+            var timer;
+            function go(){
+                i++;
+                if(i==3){
+                    i = 0;
+                }
+//              移动一张图片宽度
+                huawen_lunbo.style.left = -1570*i+"px";
+                for(var j=0;j<huawen_lunbos.length;j++){
+                    huawen_lunbos[j].style.background = "rgba(255,255,255,0.3)";
+                    huawen_lunbos[j].style.width = "10px";
+                }
+                huawen_lunbos[i].style.background = "rgba(255,255,255,0.7)";
+                huawen_lunbos[i].style.width = "25px";
+            }
+            timer = setInterval("go()",5000);
+            go();
+            huawen_lunbo_div.onmouseover=function(){
+                clearInterval(timer);
+            }
+            huawen_lunbo_div.onmouseout=function(){
+                timer = setInterval("go()",5000);
+            }
+            
+            for(var j=0;j<huawen_lunbos.length;j++){
+                huawen_lunbos[j].setAttribute("index",j);
+                huawen_lunbos[j].onclick=function(){
+                    i = this.getAttribute("index");
+                    for(var j=0;j<huawen_lunbos.length;j++){
+                        huawen_lunbos[j].style.background = "rgba(255,255,255,0.3)";
+                        huawen_lunbos[j].style.width = "10px";
+                    }
+                    this.style.background = "rgba(255,255,255,0.7)";
+                    this.style.width = "25px";
+                    huawen_lunbo.style.left = -1570*i+"px";
+                }
+            }
+</script>
+
+
+    </body>
+</html>
